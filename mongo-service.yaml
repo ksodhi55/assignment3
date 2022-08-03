@@ -3,12 +3,12 @@ kind: Service
 metadata:
   name: mongo
   labels:
-    app.kubernetes.io/name: mongo
+    app.kubernetes.io/name: mongobackend
     app.kubernetes.io/component: backend
 spec:
   ports:
   - port: 27017
     targetPort: 27017
   selector:
-    app.kubernetes.io/name: mongo
+    app.kubernetes.io/name: mongobackend
     app.kubernetes.io/component: backend
