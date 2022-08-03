@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongobackend
+  name: mongo
   labels:
     app.kubernetes.io/name: mongobackend
     app.kubernetes.io/component: backend
@@ -18,10 +18,10 @@ spec:
         app.kubernetes.io/component: backend
     spec:
       containers:
-      - name: mongobackend
+      - name: mongo
         image: mongo:4.2
         volumeMounts:
-          - mountPath: /backend
+          - mountPath: /data/db
             name: mongo-pvc
         args:
           - --bind_ip
